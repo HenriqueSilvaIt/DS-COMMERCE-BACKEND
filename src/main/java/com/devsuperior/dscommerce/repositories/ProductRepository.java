@@ -12,6 +12,9 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             "WHERE UPPER(obj.name) LIKE UPPER(CONCAT('%', :name, '%'))")
     Page<Product> searchByName(String name, Pageable pageable);
 
+    @Query("SELECT obj FROM Product obj " +
+            "WHERE UPPER(obj.barCode) LIKE UPPER(CONCAT('%', :barCode, '%'))")
+    Page<Product> searchByBarcode(String barCode, Pageable pageable);
 
 }
 

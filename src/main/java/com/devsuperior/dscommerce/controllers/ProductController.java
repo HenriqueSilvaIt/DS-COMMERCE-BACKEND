@@ -4,6 +4,7 @@ import java.net.URI;
 
 import javax.validation.Valid;
 
+import com.devsuperior.dscommerce.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -44,6 +45,18 @@ public class ProductController {
         Page<ProductMinDTO> dto = service.findAll(name, pageable);
         return ResponseEntity.ok(dto);
     }
+/*
+
+    @GetMapping
+    public ResponseEntity<Page<ProductMinDTO>> findByBarcode(
+            @RequestParam(name = "barCode", defaultValue = "") String barCode,
+            Pageable pageable) {
+        Page<ProductMinDTO> dto = service.findByBarcode(barCode, pageable);
+        return ResponseEntity.ok(dto);
+    }
+
+*/
+
 
 /*GetMapping
     public ResponseEntity<Page<ProductMinDTO>> findByBarCode(

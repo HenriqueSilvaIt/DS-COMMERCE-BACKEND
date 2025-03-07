@@ -46,7 +46,11 @@ public class ProductService {
         return result.map(x -> new ProductMinDTO(x));
     }
 
-
+    @Transactional(readOnly = true)
+    public Page<ProductMinDTO> findByBarcode(String barCode, Pageable pageable) {
+        Page<Product> result = repository.searchByBarcode(barCode, pageable);
+        return result.map(x -> new ProductMinDTO(x));
+    }
 
     @Transactional
     public ProductDTO insert(ProductDTO dto) {
