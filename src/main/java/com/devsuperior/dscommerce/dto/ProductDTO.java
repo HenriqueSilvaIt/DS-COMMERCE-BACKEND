@@ -25,9 +25,7 @@ public class ProductDTO {
     @Positive(message = "O preço deve ser positivo")
     private Double price;
     private String imgUrl;
-    @Size(min = 11, message ="Mínimo 1 caractere para código de barra")
-    private String barCode;
-    
+
     @NotEmpty(message = "Deve ter pelo menos uma categoria")
     private List<CategoryDTO> categories = new ArrayList<>();
 
@@ -36,7 +34,6 @@ public class ProductDTO {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.barCode = barCode;
         this.imgUrl = imgUrl;
     }
 
@@ -46,7 +43,6 @@ public class ProductDTO {
         description = entity.getDescription();
         price = entity.getPrice();
         imgUrl = entity.getImgUrl();
-        barCode = entity.getBarCode();
         for (Category cat : entity.getCategories()) {
         	categories.add(new CategoryDTO(cat));
         }
@@ -72,7 +68,6 @@ public class ProductDTO {
         return imgUrl;
     }
 
-    public String getBarCode() {return barCode; }
 
 	public List<CategoryDTO> getCategories() {
 		return categories;

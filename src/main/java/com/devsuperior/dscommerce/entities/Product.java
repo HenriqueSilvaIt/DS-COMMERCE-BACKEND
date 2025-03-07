@@ -34,13 +34,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Double price, String imgUrl, String barCode) {
+    public Product(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.imgUrl = imgUrl;
-        this.barCode = barCode;
     }
 
     public Long getId() {
@@ -91,9 +90,6 @@ public class Product {
         return items;
     }
 
-    public String getBarCode() {return barCode;}
-
-    public void setBarcode(String barCode) {this.barCode = barCode;}
 
     public List<Order> getOrders() {
         return items.stream().map(x -> x.getOrder()).toList();
