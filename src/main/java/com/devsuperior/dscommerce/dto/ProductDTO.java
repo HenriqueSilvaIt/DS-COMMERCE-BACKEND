@@ -29,7 +29,7 @@ public class ProductDTO {
     @NotEmpty(message = "Deve ter pelo menos uma categoria")
     private List<CategoryDTO> categories = new ArrayList<>();
 
-    public ProductDTO(Long id, String name, String description, Double price, String imgUrl, String barCode) {
+    public ProductDTO(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
         this.name = name;
         this.description = description;

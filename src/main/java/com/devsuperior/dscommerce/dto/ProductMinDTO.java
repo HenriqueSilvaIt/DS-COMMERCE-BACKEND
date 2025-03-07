@@ -8,14 +8,12 @@ public class ProductMinDTO {
     private String name;
     private Double price;
     private String imgUrl;
-    public String barCode;
 
-    public ProductMinDTO(Long id, String name, Double price, String imgUrl, String barCode) {
+    public ProductMinDTO(Long id, String name, Double price, String imgUrl) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.imgUrl = imgUrl;
-        this.barCode = barCode;
     }
 
     public ProductMinDTO(Product entity) {
@@ -23,7 +21,6 @@ public class ProductMinDTO {
         name = entity.getName();
         price = entity.getPrice();
         imgUrl = entity.getImgUrl();
-        barCode = entity.getBarCode();
     }
 
     public Long getId() {
@@ -42,5 +39,4 @@ public class ProductMinDTO {
         return imgUrl;
     }
 
-    public String getBarCode(){return barCode;}
 }

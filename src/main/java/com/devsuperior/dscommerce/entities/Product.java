@@ -19,7 +19,6 @@ public class Product {
     private String description;
     private Double price;
     @Column(columnDefinition = "TEXT")
-    private String barCode;
     private String imgUrl;
 
     @ManyToMany
